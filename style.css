@@ -2,7 +2,6 @@
   /* Color Palette - Clean & Modern */
   --color-gold: #FCD144; /* Official Unicoin Yellow */
   --color-gold-hover: #e5bc3d;
-  --color-purple: #A33B93; /* New News category color */
   --color-white: #ffffff;
   --color-gray-light: #f8f9fa;
   --color-gray-border: #eeeeee;
@@ -236,7 +235,7 @@ section {
 }
 
 .news-category {
-  color: var(--color-purple);
+  color: var(--color-gold);
   font-weight: 700;
   font-size: 0.75rem;
   text-transform: capitalize;
@@ -263,8 +262,8 @@ section {
 }
 
 .btn-news {
-  border: 1px solid var(--color-purple);
-  color: var(--color-purple);
+  border: 1px solid #000;
+  color: #000;
   padding: 0.8rem 2.5rem;
   border-radius: 100px;
   text-transform: uppercase;
@@ -277,8 +276,8 @@ section {
 }
 
 .btn-news:hover {
-  background: var(--color-purple);
-  color: white;
+  background: #000;
+  color: var(--color-gold);
 }
 
 /* Trustpilot Visual */
