@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unicoin | The Smart Coin for Smart People</title>
+  <link rel="stylesheet" href="style.css?v=2.1">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container flex-between" style="height: 100%; display: flex; justify-content: space-between; align-items: center;">
+      <div class="logo" style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.5rem;">UNICOIN</div>
+      <nav class="nav-links">
+        <span>Vision</span>
+        <span>Utility</span>
+        <span>Ecosystem</span>
+        <span>Global</span>
+        <span>News</span>
+      </nav>
+      <div>
+        <a href="#" class="btn-modern btn-gold" style="padding: 0.6rem 1.5rem; font-size: 0.9rem; border-radius: 4px;">Join Waitlist</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- SECTION 1: HERO SLIDER / ICO COUNTDOWN -->
+    <section class="hero-wide" style="padding: 0;">
+      <div class="hero-image" style="background: #111;"></div>
+      
+      <div class="hero-slider-container">
+        <!-- Slide 1 -->
+        <div class="hero-slide" id="slide1">
+          <div class="hero-content">
+            <span class="eyebrow" style="color: #fff; opacity: 0.8;">ICO Launch · September 28, 2026</span>
+            <h1 style="color: #fff; margin-bottom: 1.5rem;">The Countdown to Unicoin’s ICO Has Begun</h1>
+            <p style="color: rgba(255,255,255,0.8); font-size: 1.25rem; max-width: 700px; margin: 0 auto 2.5rem;">Join the waitlist and get ready for Unicoin’s public launch on September 28, 2026.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center;">
+              <a href="#" class="btn-modern btn-gold">Join The Waitlist</a>
+              <a href="#" class="btn-modern btn-outline" style="border-color: #fff; color: #fff;">Read The White Paper</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="hero-slide" id="slide2">
+          <div class="hero-content">
+            <span class="eyebrow" style="color: #fff; opacity: 0.8;">Accessible Crypto</span>
+            <h1 style="color: #fff; margin-bottom: 1.5rem;">Built to Bring the Next Billion Into Crypto</h1>
+            <p style="color: rgba(255,255,255,0.8); font-size: 1.25rem; max-width: 700px; margin: 0 auto 2.5rem;">Unicoin is designed to make digital assets more accessible, transparent, and understandable for real people.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center;">
+              <a href="#" class="btn-modern btn-gold">Join The Waitlist</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="hero-slide" id="slide3">
+          <div class="hero-content">
+            <span class="eyebrow" style="color: #fff; opacity: 0.8;">Transparency & Vision</span>
+            <h1 style="color: #fff; margin-bottom: 1.5rem;">Built on Transparency, Assets, and Long-Term Vision</h1>
+            <p style="color: rgba(255,255,255,0.8); font-size: 1.25rem; max-width: 700px; margin: 0 auto 2.5rem;">With public reporting, an asset-focused strategy, and a growing global presence, Unicoin is preparing for its next chapter.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center;">
+              <a href="#" class="btn-modern btn-gold">Join The Waitlist</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Dots -->
+      <div class="slider-dots">
+        <div class="dot active" onclick="scrollToSlide(0)"></div>
+        <div class="dot" onclick="scrollToSlide(1)"></div>
+        <div class="dot" onclick="scrollToSlide(2)"></div>
+      </div>
+
+      <!-- Floating Countdown & Trustpilot (Persistent) -->
+      <div style="position: absolute; bottom: 4rem; left: 50%; transform: translateX(-50%); z-index: 10; text-align: center; width: 100%;">
+        <div class="countdown-module" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(15px); padding: 1.5rem 3rem; border-radius: 8px; display: inline-flex; gap: 2rem; border: 1px solid rgba(255,255,255,0.2);">
+          <div class="unit" style="color: #fff;"><strong>DAYS</strong><br>--</div>
+          <div class="unit" style="color: #fff;"><strong>HOURS</strong><br>--</div>
+          <div class="unit" style="color: #fff;"><strong>MINUTES</strong><br>--</div>
+          <div class="unit" style="color: #fff;"><strong>SECONDS</strong><br>--</div>
+        </div>
+        <div class="mt-2" style="color: #fff; opacity: 0.7; font-size: 0.85rem;">
+          Trustpilot Rating: <strong>Excellent</strong> | Based on 112 reviews
+        </div>
+      </div>
+      
+      <!-- Scroll Indicator -->
+      <div class="scroll-indicator">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
+      </div>
+    </section>
+
+    <script>
+      const container = document.querySelector('.hero-slider-container');
+      const dots = document.querySelectorAll('.dot');
+      
+      container.addEventListener('scroll', () => {
+        const index = Math.round(container.scrollLeft / container.offsetWidth);
+        dots.forEach((dot, i) => {
+          dot.classList.toggle('active', i === index);
+        });
+      });
+
+      function scrollToSlide(index) {
+        container.scrollTo({
+          left: index * container.offsetWidth,
+          behavior: 'smooth'
+        });
+      }
+
+      // Auto-scroll every 5 seconds
+      let currentIdx = 0;
+      setInterval(() => {
+        currentIdx = (currentIdx + 1) % dots.length;
+        scrollToSlide(currentIdx);
+      }, 5000);
+    </script>
+
+    <!-- SECTION 2: WHAT IS UNICOIN? -->
+    <section class="section-white">
+      <div class="container text-center">
+        <span class="eyebrow">About Unicoin</span>
+        <h2>A Next-Generation Cryptocurrency For Real People</h2>
+        <p class="intro-copy">Unicoin is a next-generation cryptocurrency designed to make digital assets more accessible, transparent, and understandable. It is built for people entering the digital economy, not only for traders, coders, or crypto experts.</p>
+        <div class="mt-2">
+          <a href="#" style="color: #000; font-weight: 700; text-decoration: none;">Read The White Paper →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: UNICOIN AT A GLANCE -->
+    <section class="section-gray">
+      <div class="container">
+        <span class="eyebrow">At A Glance</span>
+        <h2>Where To Buy, How It Works, And Official Resources</h2>
+        <p class="intro-copy" style="text-align: left; margin-left: 0;">Find the essential information about Unicoin, including where it can be purchased, its technical foundation, and official materials.</p>
+        
+        <div class="grid-3 mt-3">
+          <!-- Market Presence -->
+          <div class="card-modern" style="background: white; padding: 2rem; border: 1px solid #eee;">
+            <h3 style="font-size: 1.25rem; letter-spacing: -1px; margin-bottom: 1.5rem; border-bottom: 2px solid var(--color-gold); display: inline-block;">Market Presence</h3>
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+              <div class="flex-between"><span>Ticker</span><strong>UNCN</strong></div>
+              <div class="flex-between"><span>Name</span><strong>Unicoin</strong></div>
+              <div style="margin-top: 1rem;">
+                <h4 style="font-size: 0.8rem; opacity: 0.5; margin-bottom: 0.5rem; letter-spacing: 0;">Where to Buy</h4>
+                <div style="padding: 1rem; background: #f9f9f9; border-radius: 4px; font-weight: 600; font-size: 0.9rem;">
+                  [Approved Exchange List]
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Technical Foundation -->
+          <div class="card-modern" style="background: white; padding: 2rem; border: 1px solid #eee;">
+            <h3 style="font-size: 1.25rem; letter-spacing: -1px; margin-bottom: 1.5rem; border-bottom: 2px solid var(--color-gold); display: inline-block;">Technical Foundation</h3>
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+              <div class="flex-between"><span>Network</span><strong>Ethereum</strong></div>
+              <div class="flex-between"><span>Standard</span><strong>ERC-20</strong></div>
+              <div class="flex-between"><span>Security</span><strong style="color: #00b67a;">Audited</strong></div>
+              <div style="margin-top: 1rem;">
+                <h4 style="font-size: 0.8rem; opacity: 0.5; margin-bottom: 0.5rem; letter-spacing: 0;">Contract Address</h4>
+                <code style="font-size: 0.7rem; background: #f9f9f9; padding: 0.5rem; display: block; word-break: break-all;">[Official Contract Address]</code>
+              </div>
+            </div>
+          </div>
+
+          <!-- Resources & Support -->
+          <div class="card-modern" style="background: white; padding: 2rem; border: 1px solid #eee;">
+            <h3 style="font-size: 1.25rem; letter-spacing: -1px; margin-bottom: 1.5rem; border-bottom: 2px solid var(--color-gold); display: inline-block;">Official Resources</h3>
+            <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+              <a href="#" class="btn-modern btn-outline" style="text-align: center; width: 100%;">Download White Paper</a>
+              <a href="#" class="btn-modern btn-outline" style="text-align: center; width: 100%;">View Security Audit</a>
+              <a href="#" class="btn-modern btn-outline" style="text-align: center; width: 100%;">Transparency Portal</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: SAFEBETS -->
+    <section class="section-white">
+      <div class="container text-center">
+        <span class="eyebrow">Ecosystem</span>
+        <h2>Unicoin And SafeBets</h2>
+        <p class="intro-copy">SafeBets is part of Unicoin’s broader ecosystem vision, bringing data, trust, and real-world utility into digital transactions.</p>
+        
+        <div class="media-placeholder" style="height: 400px; margin-bottom: 3rem; max-width: 900px; margin-left: auto; margin-right: auto;">
+          [SafeBets Visual]
+        </div>
+        
+        <div class="btn-container-center">
+          <a href="#" class="btn-modern btn-outline">Learn More About SafeBets</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: TRANSPARENCY & REPORTING -->
+    <section class="section-gray">
+      <div class="container text-center">
+        <span class="eyebrow">Transparency & Reporting</span>
+        <h2>Built On Public Information And Reporting</h2>
+        <p class="intro-copy">Unicoin’s long-term strategy is grounded in transparency, public reporting, and accessible information for its community and stakeholders.</p>
+        
+        <div class="grid-3 mt-3">
+          <div class="card-modern" style="background: white; padding: 2rem; border: 1px solid #eee; text-align: left;">
+            <h3 style="letter-spacing: -1px;">Public Reporting</h3>
+            <p style="font-size: 0.95rem; color: #777; margin-bottom: 1.5rem;">Access company updates, disclosures, and reporting materials.</p>
+            <a href="#" style="color: #000; font-weight: 700; text-decoration: none; font-size: 0.85rem;">View Reports →</a>
+          </div>
+          <div class="card-modern" style="background: white; padding: 2rem; border: 1px solid #eee; text-align: left;">
+            <h3 style="letter-spacing: -1px;">White Paper</h3>
+            <p style="font-size: 0.95rem; color: #777; margin-bottom: 1.5rem;">Read the official Unicoin white paper for technical and economic details.</p>
+            <a href="#" style="color: #000; font-weight: 700; text-decoration: none; font-size: 0.85rem;">Read Now →</a>
+          </div>
+          <div class="card-modern" style="background: white; padding: 2rem; border: 1px solid #eee; text-align: left;">
+            <h3 style="letter-spacing: -1px;">Security Audit</h3>
+            <p style="font-size: 0.95rem; color: #777; margin-bottom: 1.5rem;">View approved technical audit materials and security verification.</p>
+            <a href="#" style="color: #000; font-weight: 700; text-decoration: none; font-size: 0.85rem;">View Audit →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: UNICOIN AROUND THE WORLD -->
+    <section class="section-gray">
+      <div class="container text-center">
+        <span class="eyebrow">Global Impact</span>
+        <h2>Unicoin Around The World</h2>
+        <p class="intro-copy">Unicoin has built visibility through global events, community initiatives, media presence, and ecosystem relationships across every continent.</p>
+
+        <div class="grid-4 mt-3">
+          <!-- Stat 1 -->
+          <div class="card-modern" style="background: white; padding: 4rem 2rem; border: 1px solid #eee; height: 100%; display: flex; flex-direction: column; justify-content: center;">
+            <div style="font-size: 3.5rem; font-weight: 700; color: var(--color-gold); margin-bottom: 1.5rem; font-family: 'Montserrat'; letter-spacing: -2px;">100+</div>
+            <h4 style="letter-spacing: 0; font-size: 1.1rem; margin-bottom: 1rem;">Countries</h4>
+            <p style="font-size: 0.9rem; color: #777;">Strategic presence and growing adoption in every major global market.</p>
+          </div>
+          <!-- Stat 2 -->
+          <div class="card-modern" style="background: white; padding: 4rem 2rem; border: 1px solid #eee; height: 100%; display: flex; flex-direction: column; justify-content: center;">
+            <div style="font-size: 3.5rem; font-weight: 700; color: var(--color-gold); margin-bottom: 1.5rem; font-family: 'Montserrat'; letter-spacing: -2px;">100M+</div>
+            <h4 style="letter-spacing: 0; font-size: 1.1rem; margin-bottom: 1rem;">Community</h4>
+            <p style="font-size: 0.9rem; color: #777;">A massive global network of people connected to the future of wealth.</p>
+          </div>
+          <!-- Stat 3 -->
+          <div class="card-modern" style="background: white; padding: 4rem 2rem; border: 1px solid #eee; height: 100%; display: flex; flex-direction: column; justify-content: center;">
+            <div style="font-size: 3.5rem; font-weight: 700; color: var(--color-gold); margin-bottom: 1.5rem; font-family: 'Montserrat'; letter-spacing: -2px;">50+</div>
+            <h4 style="letter-spacing: 0; font-size: 1.1rem; margin-bottom: 1rem;">Global Events</h4>
+            <p style="font-size: 0.9rem; color: #777;">Visibility in world-class financial and crypto summits across the globe.</p>
+          </div>
+          <!-- Stat 4 -->
+          <div class="card-modern" style="background: white; padding: 4rem 2rem; border: 1px solid #eee; height: 100%; display: flex; flex-direction: column; justify-content: center;">
+            <div style="font-size: 3.5rem; font-weight: 700; color: var(--color-gold); margin-bottom: 1.5rem; font-family: 'Montserrat'; letter-spacing: -2px;">20+</div>
+            <h4 style="letter-spacing: 0; font-size: 1.1rem; margin-bottom: 1rem;">Ecosystem Partners</h4>
+            <p style="font-size: 0.9rem; color: #777;">Collaborations with leading platforms to expand real-world utility.</p>
+          </div>
+        </div>
+        
+        <div class="text-center mt-3" style="margin-top: 5rem;">
+          <a href="#" class="btn-modern btn-outline">Explore Global Highlights</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: UNICOIN IN THE NEWS -->
+    <section class="section-white">
+      <div class="container">
+        <span class="eyebrow">In The News</span>
+        <h2 style="margin-bottom: 4rem;">Unicoin In The News</h2>
+
+        <div class="grid-3">
+          <!-- Card 1 -->
+          <div class="news-card">
+            <div class="news-card-img">[Leadership Image]</div>
+            <span class="news-category">Global Leadership</span>
+            <span class="news-date">12.04.2026</span>
+            <a href="#" class="news-title-link">Build Your Own Castle: Silvina Moschini on Women & Money</a>
+            <p style="font-size: 0.9rem; color: #666;">Explore how Women are leading the charge in Wealth creation and reshaping the financial ecosystem in the Gulf region.</p>
+          </div>
+          <!-- Card 2 -->
+          <div class="news-card">
+            <div class="news-card-img">[Education Image]</div>
+            <span class="news-category">Press</span>
+            <span class="news-date">05.04.2026</span>
+            <a href="#" class="news-title-link">Crypto Is Not The Gap, The Gap Is Education</a>
+            <p style="font-size: 0.9rem; color: #666;">Understanding the shifting landscape of cryptocurrency and how education is key to navigating the future.</p>
+          </div>
+          <!-- Card 3 -->
+          <div class="news-card">
+            <div class="news-card-img">[Innovation Image]</div>
+            <span class="news-category">Innovation</span>
+            <span class="news-date">28.03.2026</span>
+            <a href="#" class="news-title-link">From Entrepreneurs to Investors</a>
+            <p style="font-size: 0.9rem; color: #666;">A deep dive into the technological leap creating new female fortunes in Latin America.</p>
+          </div>
+        </div>
+        
+        <div class="text-center mt-3" style="margin-top: 5rem;">
+          <a href="#" class="btn-news">View All Media</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8: FINAL CTA -->
+    <section class="section-white text-center">
+      <div class="container">
+        <h2 style="font-size: 4rem; margin-bottom: 1rem;">Get Ready For September 28</h2>
+        <p class="intro-copy">Join the waitlist and be among the first to receive updates about Unicoin’s public launch.</p>
+        
+        <div class="countdown-mini mt-3" style="display: inline-flex; gap: 2rem; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.5rem;">
+          <div>DAYS<br>--</div>
+          <div>HOURS<br>--</div>
+          <div>MINUTES<br>--</div>
+        </div>
+
+        <div class="mt-3" style="display: flex; gap: 1rem; justify-content: center;">
+          <a href="#" class="btn-modern btn-gold">Join The Waitlist</a>
+          <a href="#" class="btn-modern btn-outline">Read The White Paper</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="logo" style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.2rem; letter-spacing: -1px;">UNICOIN</div>
+        <ul class="footer-links">
+          <li>Vision</li>
+          <li>Utility</li>
+          <li>Ecosystem</li>
+          <li>Global</li>
+          <li>News</li>
+          <li>White Paper</li>
+          <li>Trustpilot</li>
+        </ul>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="#" style="color: #000; text-decoration: none; font-size: 0.9rem;">Twitter</a>
+          <a href="#" style="color: #000; text-decoration: none; font-size: 0.9rem;">LinkedIn</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 Unicoin Inc. All rights reserved.</div>
+        <div style="display: flex; gap: 2rem;">
+          <span>Privacy Policy</span>
+          <span>Terms of Service</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
