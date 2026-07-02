@@ -32,7 +32,7 @@
       
       <div class="hero-slider-container">
         <!-- Slide 1 -->
-        <div class="hero-slide active">
+        <div class="hero-slide" id="slide1">
           <div class="hero-content">
             <span class="eyebrow" style="color: #fff; opacity: 0.8;">ICO Launch · September 28, 2026</span>
             <h1 style="color: #fff; margin-bottom: 1.5rem;">The Countdown to Unicoin’s ICO Has Begun</h1>
@@ -45,7 +45,7 @@
         </div>
 
         <!-- Slide 2 -->
-        <div class="hero-slide">
+        <div class="hero-slide" id="slide2">
           <div class="hero-content">
             <span class="eyebrow" style="color: #fff; opacity: 0.8;">Accessible Crypto</span>
             <h1 style="color: #fff; margin-bottom: 1.5rem;">Built to Bring the Next Billion Into Crypto</h1>
@@ -57,7 +57,7 @@
         </div>
 
         <!-- Slide 3 -->
-        <div class="hero-slide">
+        <div class="hero-slide" id="slide3">
           <div class="hero-content">
             <span class="eyebrow" style="color: #fff; opacity: 0.8;">Transparency & Vision</span>
             <h1 style="color: #fff; margin-bottom: 1.5rem;">Built on Transparency, Assets, and Long-Term Vision</h1>
@@ -67,6 +67,13 @@
             </div>
           </div>
         </div>
+      </div>
+
+      <!-- Navigation Dots -->
+      <div class="slider-dots">
+        <div class="dot active" onclick="scrollToSlide(0)"></div>
+        <div class="dot" onclick="scrollToSlide(1)"></div>
+        <div class="dot" onclick="scrollToSlide(2)"></div>
       </div>
 
       <!-- Floating Countdown & Trustpilot (Persistent) -->
@@ -89,14 +96,29 @@
     </section>
 
     <script>
-      let currentSlide = 0;
-      const slides = document.querySelectorAll('.hero-slide');
-      function nextSlide() {
-        slides[currentSlide].classList.remove('active');
-        currentSlide = (currentSlide + 1) % slides.length;
-        slides[currentSlide].classList.add('active');
+      const container = document.querySelector('.hero-slider-container');
+      const dots = document.querySelectorAll('.dot');
+      
+      container.addEventListener('scroll', () => {
+        const index = Math.round(container.scrollLeft / container.offsetWidth);
+        dots.forEach((dot, i) => {
+          dot.classList.toggle('active', i === index);
+        });
+      });
+
+      function scrollToSlide(index) {
+        container.scrollTo({
+          left: index * container.offsetWidth,
+          behavior: 'smooth'
+        });
       }
-      setInterval(nextSlide, 5000);
+
+      // Auto-scroll every 5 seconds
+      let currentIdx = 0;
+      setInterval(() => {
+        currentIdx = (currentIdx + 1) % dots.length;
+        scrollToSlide(currentIdx);
+      }, 5000);
     </script>
 
     <!-- SECTION 2: WHAT IS UNICOIN? -->
