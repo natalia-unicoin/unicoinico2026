@@ -55,14 +55,15 @@ h1, h2, h3, h4 {
 }
 
 h1 { font-size: clamp(3rem, 8vw, 5rem); }
-h2 { font-size: clamp(2.5rem, 5vw, 3.5rem); margin-bottom: 2rem; }
-h3 { font-size: 1.75rem; margin-bottom: 1.5rem; }
+h2 { font-size: clamp(2.5rem, 5vw, 3.5rem); margin-bottom: 2rem; text-align: center; }
+h3 { font-size: 1.75rem; margin-bottom: 1.5rem; text-align: center; }
 
 p.intro-copy {
   color: var(--color-text-muted);
   font-size: 1.25rem;
   max-width: 800px;
-  margin: 0 auto 3rem; /* Added margin bottom for spacing */
+  margin: 0 auto 3rem; 
+  text-align: center; /* Enforce centering */
 }
 
 .eyebrow {
@@ -184,11 +185,30 @@ header {
   z-index: 1;
 }
 
-.hero-content {
+/* Slider Styles */
+.hero-slider-container {
   position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.hero-slide.active {
+  opacity: 1;
   z-index: 2;
-  text-align: center;
-  max-width: 800px;
 }
 
 /* Sections */

@@ -26,37 +26,73 @@
   </header>
 
   <main>
-    <!-- SECTION 1: HERO ROTATIVO / ICO COUNTDOWN -->
+    <!-- SECTION 1: HERO SLIDER / ICO COUNTDOWN -->
     <section class="hero-wide" style="padding: 0;">
-      <div class="hero-image" style="background: #111; display: flex; align-items: center; justify-content: center;">
-        <span style="color: #444; font-size: 2rem;">[Full Wide Rotating Hero]</span>
+      <div class="hero-image" style="background: #111;"></div>
+      
+      <div class="hero-slider-container">
+        <!-- Slide 1 -->
+        <div class="hero-slide active">
+          <div class="hero-content">
+            <span class="eyebrow" style="color: #fff; opacity: 0.8;">ICO Launch · September 28, 2026</span>
+            <h1 style="color: #fff; margin-bottom: 1.5rem;">The Countdown to Unicoin’s ICO Has Begun</h1>
+            <p style="color: rgba(255,255,255,0.8); font-size: 1.25rem; max-width: 700px; margin: 0 auto 2.5rem;">Join the waitlist and get ready for Unicoin’s public launch on September 28, 2026.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center;">
+              <a href="#" class="btn-modern btn-gold">Join The Waitlist</a>
+              <a href="#" class="btn-modern btn-outline" style="border-color: #fff; color: #fff;">Read The White Paper</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="hero-slide">
+          <div class="hero-content">
+            <span class="eyebrow" style="color: #fff; opacity: 0.8;">Accessible Crypto</span>
+            <h1 style="color: #fff; margin-bottom: 1.5rem;">Built to Bring the Next Billion Into Crypto</h1>
+            <p style="color: rgba(255,255,255,0.8); font-size: 1.25rem; max-width: 700px; margin: 0 auto 2.5rem;">Unicoin is designed to make digital assets more accessible, transparent, and understandable for real people.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center;">
+              <a href="#" class="btn-modern btn-gold">Join The Waitlist</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="hero-slide">
+          <div class="hero-content">
+            <span class="eyebrow" style="color: #fff; opacity: 0.8;">Transparency & Vision</span>
+            <h1 style="color: #fff; margin-bottom: 1.5rem;">Built on Transparency, Assets, and Long-Term Vision</h1>
+            <p style="color: rgba(255,255,255,0.8); font-size: 1.25rem; max-width: 700px; margin: 0 auto 2.5rem;">With public reporting, an asset-focused strategy, and a growing global presence, Unicoin is preparing for its next chapter.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center;">
+              <a href="#" class="btn-modern btn-gold">Join The Waitlist</a>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="hero-content" style="padding: 4rem 2rem;">
-        <span class="eyebrow" style="color: #fff; opacity: 0.8;">ICO Launch · September 28, 2026</span>
-        
-        <!-- Rotating Container Placeholder -->
-        <div class="slider-placeholder" style="min-height: 250px;">
-          <h1 style="color: #fff; margin-bottom: 1.5rem;">The Countdown to Unicoin’s ICO Has Begun</h1>
-          <p style="color: rgba(255,255,255,0.8); font-size: 1.25rem; max-width: 700px; margin: 0 auto 2rem;">Join the waitlist and get ready for Unicoin’s public launch on September 28, 2026.</p>
-        </div>
 
-        <div style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 3rem;">
-          <a href="#" class="btn-modern btn-gold">Join The Waitlist</a>
-          <a href="#" class="btn-modern btn-outline" style="border-color: #fff; color: #fff;">Read The White Paper</a>
+      <!-- Floating Countdown & Trustpilot (Persistent) -->
+      <div style="position: absolute; bottom: 4rem; left: 50%; transform: translateX(-50%); z-index: 10; text-align: center; width: 100%;">
+        <div class="countdown-module" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(15px); padding: 1.5rem 3rem; border-radius: 8px; display: inline-flex; gap: 2rem; border: 1px solid rgba(255,255,255,0.2);">
+          <div class="unit" style="color: #fff;"><strong>DAYS</strong><br>--</div>
+          <div class="unit" style="color: #fff;"><strong>HOURS</strong><br>--</div>
+          <div class="unit" style="color: #fff;"><strong>MINUTES</strong><br>--</div>
+          <div class="unit" style="color: #fff;"><strong>SECONDS</strong><br>--</div>
         </div>
-
-        <div class="countdown-module" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 2rem; border-radius: 8px; display: inline-flex; gap: 2rem;">
-          <div class="unit"><strong>DAYS</strong><br>--</div>
-          <div class="unit"><strong>HOURS</strong><br>--</div>
-          <div class="unit"><strong>MINUTES</strong><br>--</div>
-          <div class="unit"><strong>SECONDS</strong><br>--</div>
-        </div>
-
-        <div class="mt-2" style="opacity: 0.7; font-size: 0.85rem;">
+        <div class="mt-2" style="color: #fff; opacity: 0.7; font-size: 0.85rem;">
           Trustpilot Rating: <strong>Excellent</strong> | Based on 112 reviews
         </div>
       </div>
     </section>
+
+    <script>
+      let currentSlide = 0;
+      const slides = document.querySelectorAll('.hero-slide');
+      function nextSlide() {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('active');
+      }
+      setInterval(nextSlide, 5000);
+    </script>
 
     <!-- SECTION 2: WHAT IS UNICOIN? -->
     <section class="section-white">
