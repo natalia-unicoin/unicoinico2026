@@ -75,6 +75,7 @@ p.intro-copy {
   font-size: 0.85rem;
   margin-bottom: 1rem;
   display: block;
+  text-align: center; /* Center by default */
 }
 
 /* Buttons */
@@ -89,6 +90,15 @@ p.intro-copy {
   border: none;
   font-family: var(--font-body);
   font-size: 1rem;
+  text-align: center;
+}
+
+.btn-container-center {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  width: 100%;
+  margin-top: 2rem;
 }
 
 .btn-gold {
