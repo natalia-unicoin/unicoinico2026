@@ -332,8 +332,13 @@ section {
 /* Grid Utils */
 .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
 .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+
+@media (max-width: 992px) {
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+}
 
 @media (max-width: 768px) {
-  .grid-2, .grid-3, .media-grid { grid-template-columns: 1fr; }
+  .grid-2, .grid-3, .grid-4, .media-grid { grid-template-columns: 1fr; }
   --spacing-section: 4rem;
 }
